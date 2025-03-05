@@ -220,14 +220,14 @@ public class Application {
             int pages = pagesInput.isEmpty() ? existingBooks.getPages() : Integer.parseInt(pagesInput);
 
             System.out.println("새로운 정보를 입력하세요 (변경하지 않으려면 Enter 입력)");
-            System.out.print("새로운 페이지 수  (" + existingBooks.getPrice() + "): ");
+            System.out.print("새로운 가격  (" + existingBooks.getPrice() + "): ");
             String priceInput = scanner.nextLine();
             int price = pagesInput.isEmpty() ? existingBooks.getPrice() : Integer.parseInt(priceInput);
 
 
-            Book updatedBook = new Book(title, author, publisher1, pages, price);
+            Book updatedBook = new Book(title1, author1, publisher1, pages, price);
             bookService.modifyBook(updatedBook,title,author);
-            System.out.println("책 정보 수정 완료: " + title+author);
+            System.out.println("책 정보 수정 완료: " + title1+" "+author1);
 
         } catch (IllegalArgumentException e) {
             System.out.println("책 정보 수정 실패: " + e.getMessage());
